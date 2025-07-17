@@ -1,4 +1,4 @@
-# Introdution to postgreSQL
+# Introdution to PostgreSQL
 Introduction to PostgreSQL
 PostgreSQL (often called Postgres) is a powerful, open-source, object-relational database system. It’s known for its reliability, flexibility, and standards compliance — and is widely used in web, mobile, and enterprise applications.
 I learned to create a Database and Table in PostgreSQL 
