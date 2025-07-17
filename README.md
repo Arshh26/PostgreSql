@@ -30,6 +30,15 @@ It’s used by top companies like Apple, Instagram, Reddit, and Spotify.
 It’s a great choice for both beginners and professionals.
 It helps you build scalable and secure applications.
 
+create_employees_table.sql
+This SQL script creates an employees table with the following columns:
+employee_id: Auto-incremented ID (Primary Key)
+name: Employee's full name (required)
+position: Job title
+department: Department name
+hire_date: Date the employee was hired
+salary: Salary in numeric format (up to 10 digits, 2 decimal places)
+
 
 
 
