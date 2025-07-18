@@ -6,3 +6,4 @@ CREATE TABLE employees(
 		hire_date DATE,
 		salary NUMERIC(10,2)
 );
+
