@@ -5,4 +5,5 @@ INSERT INTO employees(name, position, department, hire_date, salary)
 		('Shameem Banu', 'Data Analyst', 'Data Science', '2023-05-15', 75000.00),
 		('Nishat Anjum', 'DevOps Engineer', 'CSE', '2023-07-10', 85000.00);
 
+--This is a sample SQL script to create anemployee table and insert data into it.
 
