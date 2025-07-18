@@ -11,9 +11,9 @@ CREATE TABLE employee4(
 );
 
 INSERT INTO employee4(employee_id, Name, Age, Email, Position, Department, Hire_Date, Salary)
-		VALUES('101', 'Arshad','21','arshadali99936@gmail.com', 'Software Engineer', 'CSE','2023-08-08', 65000.00),
-		('102', 'Shameem Banu', '24','nishatanjum@gmail.com', 'Data Analyst', 'Data Science', '2023-05-15', 75000.00),
-		('104', 'Nishat Anjum','28','shameembanu@gmsil.com', 'DevOps Engineer', 'CSE', '2023-07-10', 85000.00);
+		VALUES(101, 'Arshad',21,'arshadali99936@gmail.com', 'Software Engineer', 'CSE','2023-08-08', 65000.00),
+		(102, 'Shameem Banu', 24,'nishatanjum@gmail.com', 'Data Analyst', 'Data Science', '2023-05-15', 75000.00),
+		(104, 'Nishat Anjum',28,'shameembanu@gmsil.com', 'DevOps Engineer', 'CSE', '2023-07-10', 85000.00);
 
 SELECT * FROM employee4
 		
