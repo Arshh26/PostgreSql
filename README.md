@@ -30,7 +30,7 @@ Why Learn PostgreSQL?
 -> It’s a great choice for both beginners and professionals.
 -> It helps you build scalable and secure applications.
 
-1.create_employees_table.sql
+# Lesson 01: create_employees_table.sql
 -> This SQL script creates an employees table with the following columns:
 -> employee_id: Auto-incremented ID (Primary Key)
 -> name: Employee's full name (required)
@@ -39,7 +39,7 @@ Why Learn PostgreSQL?
 -> hire_date: Date the employee was hired
 -> salary: Salary in numeric format (up to 10 digits, 2 decimal places)
 
-2.Inserting data in table.sql
+# Lesson 02: Inserting data in table.sql
 -> employee_id: Auto-incrementing primary key
 -> name: Employee's full name (required)
 -> position: Job title (optional)
@@ -47,7 +47,7 @@ Why Learn PostgreSQL?
 -> hire_date: Date the employee was hired (YYYY-MM-DD)
 -> salary: Employee’s salary (numeric with 2 decimal places)
 
-3.Deleting rows, and columns from Table.sql
+# Lesson 03: Deleting rows, and columns from Table.sql
 
 -> CREATE TABLE USERS
 
@@ -82,7 +82,7 @@ You cannot undo this unless you have a backup.
 After this, trying SELECT * FROM Users; will show only:
 Users_id | Name | Qualification | Income
 
-4. Data Types and Constraints
+# Lesson 04: Data Types and Constraints
 -> CREATE TABLE employee4(...)
 This command creates a new table called employee4 with the following structure:
 
@@ -102,6 +102,58 @@ This statement adds 3 employees into the employee4 table
 
  -> SELECT * FROM employee4;
 This fetches and displays all columns and all rows in the employee4 table — including the reg_date timestamp.
+
+# Lesson 05: Update Data in SQL.sql
+ 1. DROP TABLE IF EXISTS User1;
+This line deletes the table named User1 if it already exists, to avoid duplication or errors when creating it again.
+
+2. CREATE TABLE IF NOT EXISTS User1 (...)
+This creates a new table named User1 with the following columns and constraints:
+
+Column	                              Data Type	                                 Constraints
+employee_id	                            INT	                            PRIMARY KEY → Must be unique
+Name	                               VARCHAR(100)                      	NOT NULL → Cannot be empty
+Age	                                  INTEGER                          	Must be >= 18 (CHECK constraint)
+Email	                               VARCHAR(100)                   	    UNIQUE → No duplicate emails
+Position	                           VARCHAR(50)	                                 Optional
+Department	                         VARCHAR(50)	                                 Optional
+Hire_Date	                              DATE                              	 Stores the hire date
+Salary	                             NUMERIC(10,2)	                         Allows decimal salary
+
+3. INSERT INTO User1 (...) VALUES (...)
+This adds 3 employees into the table with full details:
+Arshad, 21, Software Engineer, CSE
+Shameem Banu, 24, Data Analyst, Data Science
+Nishat Anjum, 28, DevOps Engineer, CSE
+
+4. SELECT * FROM User1;
+This shows all records from the User1 table.
+
+5. UPDATE User1 SET age = 21 WHERE Name = 'Shameem Banu';
+This changes Shameem Banu's age to 21.
+
+6. SELECT * FROM User1 ORDER BY employee_id ASC;
+Displays all users sorted by employee_id in ascending order.
+
+7. UPDATE User1 SET position = 'Software Engineer' WHERE salary = 85000;
+This updates the position of any employee whose salary is 85,000 to “Software Engineer”.
+
+8. UPDATE User1 SET age = 22, department = 'Data Analyst' WHERE name = 'Shameem Banu';
+Updates Shameem Banu’s:
+Age → 22
+Department → Data Analyst
+
+9. UPDATE User1 SET salary = salary + 10000 WHERE email LIKE '%@gmail.com';
+Increases salary by ₹10,000 for employees who have a Gmail email.
+
+Summary of What I Practiced:
+Creating tables with constraints (PRIMARY KEY, CHECK, UNIQUE)
+Inserting multiple records
+Updating records conditionally
+Using LIKE for pattern matching
+Sorting with ORDER BY
+
+
 
 
 
