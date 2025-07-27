@@ -28,11 +28,13 @@ WHERE salary=85000;
 
 UPDATE User3
 SET age = 22, department = 'Data Analyst'
-WHERE name = 'Shameem Banu'
+WHERE name = 'Shameem Banu';
 
 UPDATE User3
 SET salary=salary+10000
 WHERE email LIKE '%@gmail.com';
+
+--LESSON 08: BEGINS HERE
 
 -- To Rename the name column to full_name
 

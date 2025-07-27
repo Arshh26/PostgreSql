@@ -153,6 +153,58 @@ Updating records conditionally
 Using LIKE for pattern matching
 Sorting with ORDER BY
 
+# Lesson 08: Alter Column and Datatype in SQL   
+ SQL:   ALTER TABLE User3
+        ALTER COLUMN age TYPE smallint;
+
+What it does:
+Changes the data type of the age column in the User3 table.
+From its current type (probably integer) to smallint.
+
+Why?
+smallint takes less storage (2 bytes) than integer (4 bytes).
+Use smallint when you know values will be small (e.g., age between 18–120).
+
+ SQL:    ALTER TABLE User3
+         ALTER COLUMN department SET NOT NULL;
+
+What it does:
+Modifies the department column to not allow NULL values anymore.
+
+Why?
+This ensures every row has a value for department, improving data completeness.
+
+SQL:    ALTER TABLE User3
+        ADD CONSTRAINT age CHECK (age >= 18);
+
+What it does:
+Adds a constraint named age that ensures all age values are 18 or older.
+
+Why?
+Useful for enforcing business rules, like allowing only adult users.
+Note: The constraint name age is allowed, but it’s better to give a descriptive name like check_age_min_18 to avoid confusion with the column name.
+
+SQL:    ALTER TABLE User2
+        RENAME TO Customer1;
+
+What it does:
+Renames the entire table User2 to Customer1.
+
+Why?
+Often done to better reflect the data meaning or for standardization.
+
+Summary:
+How to change column types
+How to enforce data integrity with constraints
+How to make schema changes like renaming tables
+
+
+
+
+
+
+
+
 
 
 
