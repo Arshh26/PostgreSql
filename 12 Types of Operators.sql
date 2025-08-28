@@ -86,3 +86,37 @@ select *
 select *
   from employee
  where not ( department = 'IT' );
+
+ -- Between Like and in Opertors in SQL
+
+-- 1) Retrive employee whose salary is between 40000 and 60000, - Use LIKE Operator 
+
+select first_name,
+       last_name,
+       salary
+  from employee
+ where salary between 40000 and 60000;
+
+select *
+  from employee;
+
+-- 2) Find employees whose email addresses are ends with gmail.com -Use the LIKE Operator 
+select *
+  from employee;
+
+select first_name,
+       last_name,
+       email
+  from employee
+ where email like '%@gmail.com';
+
+-- 3) Retrieve employee who belong to either the a'Finance' or 'Marketing' department- use IN Operator  
+select *
+  from employee;
+
+select first_name,
+       last_name,
+       department
+  from employee
+ where department in ( 'Finance',
+                       'Marketing' );
