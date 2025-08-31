@@ -120,3 +120,56 @@ select first_name,
   from employee
  where department in ( 'Finance',
                        'Marketing' );
+                       
+
+-- Others Operators in sql
+
+-- 1) IS NULL Operator
+-- 2) ORDER BY Operator
+-- 3) LIMIT Operator
+-- 4) DISTINCT Operator
+
+-- Find employees where the email column is NULL ( if Applicable).
+
+SELECT
+	FIRST_NAME,
+	LAST_NAME,
+	EMAIL
+FROM
+	EMPLOYEE
+WHERE
+	EMAIL IS NULL;
+
+SELECT * FROM EMPLOYEE;
+
+-- List employess sorted by salry in DESCENDING order. 
+SELECT
+	FIRST_NAME,
+	LAST_NAME,
+	SALARY
+FROM
+	EMPLOYEE
+ORDER BY
+	SALARY ASC;
+
+SELECT * FROM EMPLOYEE;
+
+-- Retrieve the top 5 highest-paid employees.
+SELECT
+	FIRST_NAME,
+	LAST_NAME,
+	SALARY
+FROM
+	EMPLOYEE
+ORDER BY
+	SALARY DESC
+LIMIT 5;
+
+SELECT * FROM EMPLOYEE;
+
+-- Retrieve a list of unique departments
+
+SELECT COUNT (DISTINCT DEPARTMENT)
+FROM EMPLOYEE;
+
+SELECT * FROM EMPLOYEE;
