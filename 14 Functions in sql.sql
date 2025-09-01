@@ -123,3 +123,84 @@ select avg(price) as average_price
 select max(price) as max_price,
        min(price) as min_price
   from product;
+
+/*String Function in SQL
+
+-- 1) LENGTH(string) / CHAR_LENGTH(string) → Returns the length of the string
+-- 2) UPPER(string) / UCASE(string) → Converts text to uppercase.
+-- 3) LOWER(string) / LCASE(string) → Converts text to lowercase.
+-- 4) SUBSTRING(string FROM start FOR length) → Extract part of string.
+-- 5) CONCAT(string1, string2, ...) → Concatenates strings.
+-- 6) REPLACE(string, from, to) → Replace substring.
+-- 7) The TRIM() function is used to remove unwanted characters (by default spaces) from a string.*/
+
+select *
+  from product;
+
+-- GET ALL THE CATEGORIES IN UPPERCASE
+
+select upper(category) as category_capital
+  from product;
+
+-- GET ALL THE CATEGORIES IN LOWERCASE
+
+select lower(category) as category_capital
+  from product;
+
+--JOIN PRODUCT AND CATEGORY TEXT WITH HYPHEN
+
+select concat(
+   product_name,
+   '-',
+   category
+) as product_details
+  from product;
+
+-- EXTRACT THE FIRST 5 CHARECTORS FROM PRODUCT_NAME
+
+select substring(
+   product_name,
+   1,
+   5
+) as short_name
+  from product;
+
+-- COUNT LENGTH 
+
+select product_name,
+       length(product_name) as count_of_char
+  from product;
+
+-- REMOVE LEADING AND TRAILING SPACES FROM STRING
+
+select length(trim('  MONITOR    ')) as trimmed_text;
+select length('  MONITOR    ') as trimmed_text;
+
+-- REPLACE WORD "PHONE" WITH "DEVICE" IN PRODUCT NAMES
+
+select replace(
+   product_name,
+   'phone',
+   'device'
+) as updated
+  from product;
+
+select *
+  from product;
+
+-- GET THE FIRST 3 CHARECTERS FROM CATEGORY 
+
+select left(
+   category,
+   3
+) as category_captital
+  from product;
+
+select right(
+   category,
+   3
+) as category_captital
+  from product;
+
+select *
+  from product;
