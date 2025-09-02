@@ -204,3 +204,80 @@ select right(
 
 select *
   from product;
+
+  /*Date And Time Functions in Psql
+
+-- 1) NOW () -> Returns Current Date and Time
+-- 2) CURRENT_DATE() → Returns today’s date (no time).
+-- 3) CURRENT_TIME → Returns current time.
+-- 4) DATE_PART() -> Extracts a part of the date
+-- 5) AGE() -> Returns the age between two dates
+-- 6) EXTRACT -> Extracts a Specific part of the date. */
+
+-- 1) NOW () -> Returns Current Date and Time
+
+SELECT NOW() AS CURRENT_DATETIME;
+
+-- 2) CURRENT_DATE() → Returns today’s date (no time).
+
+SELECT CURRENT_DATE AS TODAYS_DATE;
+
+SELECT ADDED_DATE, CURRENT_DATE, (CURRENT_DATE - ADDED_DATE) AS DAYS_DIFFERENCE
+FROM PRODUCT;
+
+-- 3) CURRENT_TIME → Returns current time.
+
+SELECT CURRENT_TIME AS current_time;
+
+-- 4) DATE_PART() -> Extracts a part of the date
+
+SELECT PRODUCT_NAME, ADDED_DATE, DATE_PART('DOW', ADDED_DATE) AS DAY_OF_WEEK
+FROM PRODUCT;
+--DOW: DAY OF WEEK.
+
+-- 5) AGE() -> Returns the age between two dates
+
+SELECT PRODUCT_NAME,
+AGE(CURRENT_DATE, ADDED_DATE) AS AGE_SINCE_ADDED
+FROM PRODUCT;
+
+SELECT * FROM PRODUCT;
+
+
+-- 6) EXTRACT -> Extracts a Specific part of the date. */
+
+SELECT product_name, 
+		EXTRACT(YEAR FROM ADDED_DATE) AS YEAR_ADDED,
+		EXTRACT(MONTH FROM ADDED_DATE) AS MONTH_ADDED,
+		EXTRACT(DAY FROM ADDED_DATE) AS DAY_ADDED
+FROM PRODUCT; 
+
+-- 7)TO_CHAR() - FORMAT DATES AS STRINGS
+-- FROMAT ADDED_DATE IN A CUSTOM FORMAT (DD-MON-YYYY).
+
+SELECT PRODUCT_NAME,
+TO_CHAR(ADDED_DATE, 'DD-MON-YYYY') AS FORMATED_DATE
+FROM PRODUCT;
+
+-- 8. DATE_TRUNC() – Truncate Date to Precision
+-- Truncate added_date to the start of the month.
+
+SELECT product_name, added_date,
+		DATE_TRUNC('week', added_date) AS week_start,
+		DATE_PART('isodow', added_date) AS day_of_week
+FROM product;
+
+-- 9. INTERVAL – Add or Subtract Time Intervals
+-- Add 6 months to the added_date.
+
+SELECT product_name, added_date,
+		added_date + INTERVAL '6 months' AS new_date
+FROM product;
+
+-- 10. TO_DATE() – Convert String to Date
+-- Convert a string to a date format.
+
+SELECT TO_DATE('28-11-2024', 'DD-MM-YYYY') AS converted_date;
+
+
+
